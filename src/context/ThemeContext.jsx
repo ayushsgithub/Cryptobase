@@ -15,8 +15,6 @@ const getInitialTheme = () => {
     return "light"
 }
 
-
-
 export const ThemeContext = createContext()
 
 export const ThemeProvider = ( {initialTheme, children } ) => {
@@ -29,16 +27,12 @@ export const ThemeProvider = ( {initialTheme, children } ) => {
         root.classList.remove(isDark ? "light" : "dark")
         root.classList.add(theme)
 
-
         localStorage.setItem("color-theme", theme)
-
-
     }
 
     if (initialTheme){
         rawSetTheme(initialTheme)
     }
-
     useEffect(() => {
         rawSetTheme(theme)
     }, [theme])

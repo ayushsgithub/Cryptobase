@@ -29,7 +29,7 @@ const SavedCoin = () => {
 
   return (
     <div>
-      {coins.length === 0 ? (
+      {coins?.length === 0 ? (
         <p>
           You don't have any coins saved. Please save a coin to add it to the
           watch list. <Link to="/">Click here to search coins.</Link>
@@ -44,7 +44,7 @@ const SavedCoin = () => {
             </tr>
           </thead>
           <tbody>
-            {coins.map((coin) => (
+            {coins?.map((coin) => (
               <tr key={coin.id} className="h-[60px] overflow-hidden">
                 <td>{coin.rank}</td>
                 <td>

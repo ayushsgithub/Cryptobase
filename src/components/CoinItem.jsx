@@ -19,19 +19,16 @@ const CoinItem = ({ coin }) => {
       await updateDoc(coinPath, {
         watchList: arrayUnion({
           id: coin.id,
-          name: coin.name,
           image: coin.image,
+          name: coin.name,
           rank: coin.market_cap_rank,
-          symbol: coin.symbol
+          symbol: coin.symbol,
         })
       })
     }else {
       alert("Please sign in to save a coin to your watch list")
     }
-  }
-
-
-
+  };
 
   return (
     <tr className="h-[80px] border-b overflow-hidden">
